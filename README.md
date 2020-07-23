@@ -1,4 +1,4 @@
-[Illustration of the Roomba with a Top Hat and Confetti](./nom-nom-blue-confetti.png)
+![Illustration of the Roomba with a Top Hat and Confetti](./nom-nom-blue-confetti.png)
 
 # Nom Nom the remote controlled Roomba
 
