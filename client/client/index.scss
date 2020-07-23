@@ -1,0 +1,140 @@
+:root {
+  --team-color: blue;
+  --icon-color: #fff;
+  --text-direction: left;
+  --flex-direction: row;
+  --scale-flip: 1;
+  --border-radius: 10px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Fira Code, monospace;
+}
+
+.team-red {
+  --team-color: rgb(223, 71, 74);
+  --text-direction: right;
+  --flex-direction: row-reverse;
+  --scale-flip: -1;
+}
+
+.team-blue {
+  --team-color: #008cff;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+html {
+  // background-color: #000;
+}
+
+main {
+  margin: 10px;
+  padding: 20px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  > h1 {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin-top: 0;
+    line-height: 1;
+    text-align: var(--text-direction);
+  }
+
+  > h1:after {
+    margin-top: 10px;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-bottom: 4px solid var(--team-color);
+    // box-shadow: 0px 0px 4px 2px var(--team-color);
+    // border-radius: 2px;
+    opacity: 0.8;
+  }
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.message {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: var(--flex-direction);
+  margin-bottom: 10px;
+
+  line-height: 40px;
+  font-size: 20px;
+
+  animation: slide-up 0.4s ease-out;
+
+  &.hidden {
+    display: none;
+  }
+
+  .message-border {
+    fill: var(--team-color);
+  }
+
+  .message-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-self: flex-end;
+  }
+
+  .message-triangle polygon {
+    fill: var(--team-color);
+    transform: scaleX(var(--scale-flip));
+    transform-origin: center;
+  }
+
+  .avatar,
+  .message-icon {
+    width: 40px;
+    height: 40px;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .message-icon {
+    background: var(--team-color);
+    padding: 5px;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./index.scss">
+  </head>
+  <body>
+    <main id="main">
+      <h1 id="teamName">Team Blue</h1>
+      <template id="messageTemplate">
+        <li class="message hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" width="5" height="40">
+            <rect class="message-border" width="5" height="40"/>
+          </svg>
+          <img class="avatar" src="https://placehold.it/40" alt=""/>
+          <img class="message-icon" src="" alt=""/>
+          <svg class="message-triangle" xmlns="http://www.w3.org/2000/svg" width="10" height="40">
+            <polygon fill="blue" points="0,0 10,20 0,40"/>
+          </svg>
+          <span class="message-body"></span>
+        </li>
+      </template>
+      <ul class="messages"></ul>
+    </main>
+  </body>
+  <script src="./index.js"></script>
+</html>

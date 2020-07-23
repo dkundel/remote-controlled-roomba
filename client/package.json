@@ -1,0 +1,30 @@
+{
+  "name": "roombot-obs-overlay",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "twilio-run --assets-folder=dist",
+    "dev:ui": "parcel watch client/index.html",
+    "dev:functions": "twilio-run --assets-folder=dist",
+    "dev": "concurrently \"npm:dev:ui\" \"npm:dev:functions\"",
+    "build": "rimraf dist/ && parcel build client/index.html",
+    "predeploy": "npm run build",
+    "deploy": "twilio-run deploy --assets-folder=dist"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.10",
+    "twilio-run": "^2.8.0-beta.1",
+    "twilio-sync": "^0.12.2"
+  },
+  "engines": {
+    "node": "10"
+  }
+}
